@@ -3,6 +3,6 @@ package demo.config;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@WebCo
+@EnableWebMvc
 public class WebConfig {
 }
