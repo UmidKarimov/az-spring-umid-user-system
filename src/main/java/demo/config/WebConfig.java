@@ -17,7 +17,7 @@ public class WebConfig {
         FreeMarkerViewResolver freeMarkerViewResolver = new FreeMarkerViewResolver();
         freeMarkerViewResolver.setOrder(1);
         freeMarkerViewResolver.setPrefix("");
-        freeMarkerViewResolver.setPrefix(".ftl");
+        freeMarkerViewResolver.setSuffix(".ftl");
 
         return freeMarkerViewResolver;
     }
