@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
 <body>
-    <h1>First tmp</h1>
+
+<h1>My First Heading FTL</h1>
+
+<p>My first paragraph FTL.</p>
+
 </body>
 </html>
