@@ -17,22 +17,6 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 @EnableWebMvc
 public class SpringConfigMy implements WebMvcConfigurer {
 
-      /* <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/WEB-INF/views/"/>
-        <property name="suffix" value=".html"/>
-    </bean>
-
-    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
-        <property name="templateResolver" ref="templateResolver"/>
-        <property name="enableSpringELCompiler" value="true"/>
-    </bean>
-
-    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="templateEngine"/>
-        <property name="order" value="1"/>
-        <property name="viewNames" value="*"/>
-    </bean>*/
-
     private final ApplicationContext applicationContext;
 
     @Autowired
