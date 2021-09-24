@@ -27,4 +27,29 @@ public class FirstController {
     public String goodByePage() {
         return "first/goodbye";
     }
+
+    @GetMapping("calculator")
+    public String calculate(@RequestParam(value = "a") int a,
+                            @RequestParam(value = "b") int b,
+                            @RequestParam(value = "action") String action,
+                            Model model) {
+
+        if (action.equals("add"))
+            model.addAttribute("result", "result "+ (a + b));
+
+        else if (action.equals("minus"))
+            model.addAttribute("result", "result "+ (a - b));
+
+        else if (action.equals("div"))
+            model.addAttribute("result", "result "+ (a / b));
+
+        else if (action.equals("mul"))
+            model.addAttribute("result", "result "+ (a * b));
+
+        else
+            model.addAttribute("result", "Invalid request");
+
+
+        return "first/calculator";
+    }
 }
