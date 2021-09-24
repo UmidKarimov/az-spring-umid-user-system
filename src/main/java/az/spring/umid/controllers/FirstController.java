@@ -34,21 +34,27 @@ public class FirstController {
                             @RequestParam(value = "action") String action,
                             Model model) {
 
-        if (action.equals("add"))
-            model.addAttribute("result", "result "+ (a + b));
+        double result;
+        
+        switch (action) {
+            case "add":
+                result = a + b;
+                break;
+            case "minus":
+                result = a - b;
+                break;
+            case "div":
+                result = a / (double)b;
+                break;
+            case "mul":
+                result = a * b;
+                break;
+            default:
+                result=0;
+                break;
+        }
 
-        else if (action.equals("minus"))
-            model.addAttribute("result", "result "+ (a - b));
-
-        else if (action.equals("div"))
-            model.addAttribute("result", "result "+ (a / b));
-
-        else if (action.equals("mul"))
-            model.addAttribute("result", "result "+ (a * b));
-
-        else
-            model.addAttribute("result", "Invalid request");
-
+        model.addAttribute("result", "result "+ result);
 
         return "first/calculator";
     }
