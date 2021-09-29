@@ -1,5 +1,7 @@
 package az.spring.umid.controllers;
 
+import az.spring.umid.dao.PersonDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,14 +12,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/people")
 public class PeopleController {
 
+    private final PersonDAO personDAO;
+
+    @Autowired
+    PeopleController(PersonDAO personDAO){
+        this.personDAO=personDAO;
+    }
+
     @GetMapping()
     public String getList(Model model) {
-        return null;
+        model.addAttribute("people",personDAO.index());
+        return "people/index";
     }
 
     @GetMapping("{id}")
     public String show(@PathVariable("id") int id,
                        Model model) {
-        return null;
+        model.addAttribute("person", personDAO.show(id));
+
+        return "people/show";
     }
 }
