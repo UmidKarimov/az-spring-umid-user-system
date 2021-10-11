@@ -16,6 +16,8 @@ public class Person {
         this.id = id;
         this.name = name;
     }
+    public Person() {
+    }
 
     public String getName() {
         return name;

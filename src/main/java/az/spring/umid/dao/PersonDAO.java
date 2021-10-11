@@ -30,4 +30,9 @@ public class PersonDAO {
         return people.stream().filter(person -> person.getId() == id).findAny().orElse(null);
     }
 
+    public void save (Person person){
+        person.setId(++PEOPLE_COUNTER);
+        people.add(person);
+    }
+
 }
